@@ -2,11 +2,12 @@ package com.tpspring.gamedevelopers.controller;
 
 import com.tpspring.gamedevelopers.domain.Desarrollador;
 import com.tpspring.gamedevelopers.service.DesarrolladorService;
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -40,5 +41,3 @@ public class DesarrolladorController {
         return new ResponseEntity<>(nuevoDesarrollador, HttpStatus.CREATED);
     }
 }
-
-

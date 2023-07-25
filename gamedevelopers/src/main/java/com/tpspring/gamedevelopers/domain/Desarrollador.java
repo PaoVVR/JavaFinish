@@ -6,7 +6,6 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
@@ -16,7 +15,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 @Entity
-@Component
 public class Desarrollador {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -33,10 +31,6 @@ public class Desarrollador {
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
-
-    public Object getJuegoId() {
-        return null;
-    }
 }
 
 

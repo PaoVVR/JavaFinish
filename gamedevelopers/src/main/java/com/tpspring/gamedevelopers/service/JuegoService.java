@@ -1,16 +1,14 @@
 package com.tpspring.gamedevelopers.service;
 
 import com.tpspring.gamedevelopers.domain.Juego;
-import org.hibernate.mapping.List;
 
-
+import java.util.List;
 
 public interface JuegoService {
-
     
     Juego registroJuego(Juego juego);
 
-    List verJuegosEnDesarrollo();
+    List<Juego> verJuegosEnDesarrollo();
 
-    List verJuegosFinalizados();
+    List<Juego> verJuegosFinalizados();
 }

@@ -2,12 +2,11 @@ package com.tpspring.gamedevelopers.service.impl;
 
 import com.tpspring.gamedevelopers.domain.Juego;
 import com.tpspring.gamedevelopers.repository.JuegoRepository;
-import com.tpspring.gamedevelopers.repository.JuegoRepositoryFinish;
 import com.tpspring.gamedevelopers.service.JuegoService;
-import org.hibernate.mapping.List;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.util.List;
+
 @Service
 public class JuegoServiceImpl implements JuegoService {
     private final JuegoRepository juegoRepository;
@@ -17,9 +16,6 @@ public class JuegoServiceImpl implements JuegoService {
         this.juegoRepository = juegoRepository;
     }
 
-
-
-
     //Visualización de juegos: Permite listar los juegos que se están desarrollando.
     public List<Juego> verJuegosEnDesarrollo() {
 
@@ -28,11 +24,11 @@ public class JuegoServiceImpl implements JuegoService {
 
     //Registro de juegos: Permite agregar nuevos juegos al sistema,
     // especificando su título, descripción y fecha de lanzamiento.
-    public Juego registroJuego(String titulo, String descripcion, LocalDate fechaLanzamiento) {
+    public Juego registroJuego(Juego juego) {
         Juego nuevoJuego = new Juego();
-        nuevoJuego.setTitulo(titulo);
-        nuevoJuego.setDescripcion(descripcion);
-        nuevoJuego.setFechaLanzamiento(fechaLanzamiento);
+        nuevoJuego.setTitulo(juego.getTitulo());
+        nuevoJuego.setDescripcion(juego.getDescripcion());
+        nuevoJuego.setFechaLanzamiento(juego.getFechaLanzamiento());
 
         return juegoRepository.save(nuevoJuego);
     }
