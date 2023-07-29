@@ -15,11 +15,11 @@ import java.time.LocalDate;
 public class JuegoController {
     @Autowired
     private JuegoService juegoService;
-    private Juego juego; }
+    private Juego juego;
 
     //Registro de juegos: Permite agregar nuevos juegos al sistema,
     // especificando su título, descripción y fecha de lanzamiento.
-    /*@PostMapping
+    @PostMapping
     public ResponseEntity<Juego> registroJuego(@RequestParam String titulo, String descripcion, LocalDate fechaLanzamiento) {
         Juego nuevoJuego = juegoService.registroJuego(juego);
         return new ResponseEntity<>(nuevoJuego, HttpStatus.CREATED);
@@ -40,4 +40,4 @@ public class JuegoController {
     }
 
     }
-*/
+

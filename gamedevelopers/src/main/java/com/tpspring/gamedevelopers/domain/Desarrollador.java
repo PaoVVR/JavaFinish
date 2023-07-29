@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,6 +28,12 @@ public class Desarrollador {
 
     @Column(length = 50,columnDefinition = "varchar(50)",updatable = true,nullable = false)
     private String nombre;
+
+    @Column(length = 50,columnDefinition = "varchar(50)",updatable = true,nullable = false)
+    private List<Juego> juegos = new ArrayList<>();
+
+    @Column(length = 50,columnDefinition = "varchar(50)",updatable = true,nullable = false)
+    private List<Tarea> tareas = new ArrayList<>();
 
     @Column(length = 50,columnDefinition = "varchar(50)",updatable = true,nullable = false)
     private String correoElectronico;

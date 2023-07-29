@@ -1,6 +1,7 @@
 package com.tpspring.gamedevelopers.controller;
 
 import com.tpspring.gamedevelopers.domain.Tarea;
+import com.tpspring.gamedevelopers.enumeration.EstadoTarea;
 import com.tpspring.gamedevelopers.service.TareaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
