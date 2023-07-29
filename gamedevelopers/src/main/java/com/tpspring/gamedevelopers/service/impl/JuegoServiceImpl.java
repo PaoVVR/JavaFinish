@@ -3,6 +3,7 @@ package com.tpspring.gamedevelopers.service.impl;
 import com.tpspring.gamedevelopers.domain.Juego;
 import com.tpspring.gamedevelopers.repository.JuegoRepository;
 import com.tpspring.gamedevelopers.service.JuegoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,9 +36,9 @@ public class JuegoServiceImpl implements JuegoService {
 
 
     //Visualización de juegos finalizados: Permite listar los juegos que terminaron su desarrollo.
-
     public List<Juego> verJuegosFinalizados() {
-        return JuegoRepositoryFinish.findByEstado("Finalizado");
+        return juegoRepository.findByEstadoEquals("Finalizado");
     }
+
 
 }

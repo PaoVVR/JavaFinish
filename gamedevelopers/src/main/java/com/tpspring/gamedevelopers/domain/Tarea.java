@@ -14,7 +14,6 @@ import java.util.UUID;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
 public class Tarea {
     @Id
@@ -25,7 +24,7 @@ public class Tarea {
     private UUID uuid;
 
     @Column(length = 36,columnDefinition = "varchar(36)",updatable = false,nullable = false)
-    private String descripción;
+    private String descripcion;
 
     @Enumerated(EnumType.STRING)
     private EstadoTarea estado;

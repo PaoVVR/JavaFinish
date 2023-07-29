@@ -11,8 +11,10 @@ import java.util.List;
 @Repository
 
 public interface JuegoRepository extends JpaRepository<Juego, Long> {
-    List<> findByEstado(String enDesarrollo);
 
-    List<> findByEstado(String Finalizado);
+
+    List<Juego>findByEstado(String enDesarrollo);
+
+    List<Juego> findByEstadoEquals(String finalizado);
 }
 

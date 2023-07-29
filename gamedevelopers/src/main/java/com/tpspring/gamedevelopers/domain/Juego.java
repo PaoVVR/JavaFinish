@@ -1,5 +1,7 @@
 package com.tpspring.gamedevelopers.domain;
 
+import com.tpspring.gamedevelopers.enumeration.EstadoJuego;
+import com.tpspring.gamedevelopers.enumeration.EstadoTarea;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -15,10 +17,11 @@ import java.util.UUID;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
 
 public class Juego {
+    @ManyToMany
+    @JoinTable
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name="UUID",strategy="org.hibernate.id.UUIDGenerator")
@@ -39,5 +42,8 @@ public class Juego {
     private String tareas;
 
     private LocalDate fechaLanzamiento;
+
+    @Enumerated(EnumType.STRING)
+    private EstadoJuego estado;
 
 }
